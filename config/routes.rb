@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 	
 	resources :tips
 	
+	resources :steps
+	
   # Example resource route with options:
   #   resources :products do
   #     member do
