@@ -26,39 +26,44 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
 
-    respond_to do |format|
+    #respond_to do |format|
       if @tip.save
-        format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
-        format.json { render :show, status: :created, location: @tip }
+      #  format.html { redirect_to @tip, notice: 'Tip was successfully created.' }
+      #  format.json { render :show, status: :created, location: @tip }
+      	redirect_to @tip, notice: 'Tip was successfully created.'
       else
-        format.html { render :new }
-        format.json { render json: @tip.errors, status: :unprocessable_entity }
-      end
+       # format.html { render :new }
+       # format.json { render json: @tip.errors, status: :unprocessable_entity }
+       	render :new
+    #  end
     end
   end
 
   # PATCH/PUT /tips/1
   # PATCH/PUT /tips/1.json
   def update
-    respond_to do |format|
+    #respond_to do |format|
       if @tip.update(tip_params)
-        format.html { redirect_to @tip, notice: 'Tip was successfully updated.' }
-        format.json { render :show, status: :ok, location: @tip }
+      	redirect_to @tip, notice: 'Tip was successfully updated.'
+       # format.html { redirect_to @tip, notice: 'Tip was successfully updated.' }
+       # format.json { render :show, status: :ok, location: @tip }
       else
-        format.html { render :edit }
-        format.json { render json: @tip.errors, status: :unprocessable_entity }
+      	render :edit
+       # format.html { render :edit }
+    	# format.json { render json: @tip.errors, status: :unprocessable_entity }
       end
-    end
+    #end
   end
 
   # DELETE /tips/1
   # DELETE /tips/1.json
   def destroy
     @tip.destroy
-    respond_to do |format|
-      format.html { redirect_to tips_url, notice: 'Tip was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to tips_url, notice: 'Tip was successfully destroyed.'
+   # respond_to do |format|
+   #   format.html { redirect_to tips_url, notice: 'Tip was successfully destroyed.' }
+    #  format.json { head :no_content }
+   # end
   end
 
   private

@@ -6,6 +6,11 @@
 </p>
 
 <p class="centered">
+  <strong>Image:</strong>
+  <%= @tip.image %>
+</p>
+
+<p class="centered">
   <strong>Headline:</strong>
   <%= @tip.headline %>
 </p>
@@ -17,7 +22,7 @@
 <ul>
   <% @tip.steps.each do |step| %>
   <li>
-  <span><%= step.heading %> </span><br>
+  <h3><%= step.heading %> </h3>
   <span><%= step.image %> </span><br>
   <span><%= step.content %> </span><br>
   <span><%= step.displayIndex %> </span><br>
@@ -26,10 +31,6 @@
 </ul>
 </div>
 
-<p class="centered">
-  <strong>Image:</strong>
-  <%= @tip.image %>
-</p>
-
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+<%= link_to 'Edit Tip', edit_tip_path(@tip) %> |
+<%= link_to 'View / Edit Steps', steps_path %> | 
+<%= link_to 'All Tips', tips_path %>

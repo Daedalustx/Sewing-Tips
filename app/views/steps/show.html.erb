@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p class="centered">
+  <strong>Heading:</strong>
+  <%= @step.heading %>
+</p>
+
+<p class="centered">
+  <strong>Image:</strong>
+  <%= @step.image %>
+</p>
+
+<div class="centered">
+<p>
+  <strong>Content:</strong>
+</p>
+<p>
+  <%= @step.content %>
+</p>
+</div>
+
+<p class="centered">
+  <strong>Display Order:</strong>
+  <%= @step.displayIndex %>
+</p>
+
+<p class="centered">
+  <strong>Belongs to Tip: </strong>
+  <%= @step.tip_id %>
+</p>
+
+<%= link_to 'Edit', edit_step_path(@step) %> |
+<%= link_to 'Back', steps_path %>
